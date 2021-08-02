@@ -1,0 +1,102 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "e2e/tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "eqeqeq": ["error", "always"],
+        "no-alert": "warn",
+        "no-console": [
+          "warn",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["warn", { "vars": "local" }],
+        "padded-blocks": [
+          "warn",
+          {
+            "blocks": "never",
+            "classes": "always"
+          }
+        ],
+        "lines-between-class-members": ["warn", "always", { "exceptAfterSingleLine": true }],
+        "curly": ["error", "multi", "consistent"],
+        "import/extensions": "off",
+        "@typescript-eslint/class-name-casing": "off",
+        "comma-dangle": ["error", "never"],
+        "@typescript-eslint/typedef": [
+          "error",
+          {
+            "arrowParameter": true,
+            "variableDeclaration": false,
+            "memberVariableDeclaration": true,
+            "parameter": true,
+            "propertyDeclaration": true
+          }
+        ],
+        "require-await": "error",
+        "@typescript-eslint/no-inferrable-types": [
+          "error",
+          {
+            "ignoreParameters": true,
+            "ignoreProperties": true
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": false,
+            "allowTypedFunctionExpressions": true,
+            "allowHigherOrderFunctions": true,
+            "allowDirectConstAssertionInArrowFunctions": true,
+            "allowConciseArrowFunctionExpressionsStartingWithVoid": false
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
